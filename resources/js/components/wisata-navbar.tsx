@@ -14,7 +14,10 @@ interface WisataNavbarProps {
     navLinks?: NavLink[];
 }
 
-export default function WisataNavbar({ canRegister = true, navLinks }: WisataNavbarProps) {
+export default function WisataNavbar({
+    canRegister = true,
+    navLinks,
+}: WisataNavbarProps) {
     const { auth } = usePage().props;
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -29,7 +32,10 @@ export default function WisataNavbar({ canRegister = true, navLinks }: WisataNav
     return (
         <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
             <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-                <Link href="/" className="flex items-center gap-2 text-xl font-bold tracking-tight">
+                <Link
+                    href="/"
+                    className="flex items-center gap-2 text-xl font-bold tracking-tight"
+                >
                     <Mountain className="h-6 w-6 text-primary" />
                     <span>Desa Manud Jaya</span>
                 </Link>
@@ -81,7 +87,11 @@ export default function WisataNavbar({ canRegister = true, navLinks }: WisataNav
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                     aria-label="Toggle menu"
                 >
-                    {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                    {mobileMenuOpen ? (
+                        <X className="h-6 w-6" />
+                    ) : (
+                        <Menu className="h-6 w-6" />
+                    )}
                 </button>
             </nav>
 
@@ -101,16 +111,25 @@ export default function WisataNavbar({ canRegister = true, navLinks }: WisataNav
                         ))}
                         <div className="flex items-center gap-3 border-t border-border pt-4">
                             {auth.user ? (
-                                <Link href={dashboard()} className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground">
+                                <Link
+                                    href={dashboard()}
+                                    className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground"
+                                >
                                     Dashboard
                                 </Link>
                             ) : (
                                 <>
-                                    <Link href={login()} className="text-sm font-medium text-muted-foreground">
+                                    <Link
+                                        href={login()}
+                                        className="text-sm font-medium text-muted-foreground"
+                                    >
                                         Log in
                                     </Link>
                                     {canRegister && (
-                                        <Link href={register()} className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground">
+                                        <Link
+                                            href={register()}
+                                            className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground"
+                                        >
                                             Register
                                         </Link>
                                     )}

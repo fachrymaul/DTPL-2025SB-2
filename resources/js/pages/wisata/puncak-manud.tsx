@@ -1,18 +1,35 @@
 import { Head, Link } from '@inertiajs/react';
-import { ArrowLeft, Clock, Mountain, Signpost, ThermometerSun, TrendingUp } from 'lucide-react';
+import {
+    ArrowLeft,
+    Clock,
+    Mountain,
+    Signpost,
+    ThermometerSun,
+    TrendingUp,
+} from 'lucide-react';
 
 import WisataNavbar from '@/components/wisata-navbar';
 
-export default function PuncakManud({ canRegister = true }: { canRegister?: boolean }) {
+export default function PuncakManud({
+    canRegister = true,
+}: {
+    canRegister?: boolean;
+}) {
     return (
         <>
             <Head title="Puncak Manud — Desa Manud Jaya">
                 <link rel="preconnect" href="https://fonts.bunny.net" />
-                <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600,700" rel="stylesheet" />
+                <link
+                    href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600,700"
+                    rel="stylesheet"
+                />
             </Head>
 
             <div className="min-h-screen bg-background text-foreground">
-                <WisataNavbar canRegister={canRegister} navLinks={[{ href: '/', label: 'Beranda' }]} />
+                <WisataNavbar
+                    canRegister={canRegister}
+                    navLinks={[{ href: '/', label: 'Beranda' }]}
+                />
 
                 {/* Hero */}
                 <section className="relative overflow-hidden">
@@ -22,9 +39,13 @@ export default function PuncakManud({ canRegister = true }: { canRegister?: bool
                             <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-400 to-cyan-500">
                                 <Mountain className="h-10 w-10 text-white" />
                             </div>
-                            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">Puncak Manud</h1>
+                            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
+                                Puncak Manud
+                            </h1>
                             <p className="mt-4 text-lg text-muted-foreground">
-                                Panoramic mountain viewpoint offering breathtaking sunrise vistas over the village and surrounding valleys.
+                                Panoramic mountain viewpoint offering
+                                breathtaking sunrise vistas over the village and
+                                surrounding valleys.
                             </p>
                         </div>
                     </div>
@@ -35,19 +56,30 @@ export default function PuncakManud({ canRegister = true }: { canRegister?: bool
                     <div className="grid gap-12 lg:grid-cols-3">
                         {/* Main content */}
                         <div className="lg:col-span-2">
-                            <h2 className="text-2xl font-bold">Tentang Puncak Manud</h2>
+                            <h2 className="text-2xl font-bold">
+                                Tentang Puncak Manud
+                            </h2>
                             <p className="mt-4 leading-relaxed text-muted-foreground">
-                                Puncak Manud adalah titik tertinggi di kawasan Desa Manud Jaya, menawarkan pemandangan 360 derajat yang
-                                memukau dari puncak gunung. Dari sini, pengunjung dapat menyaksikan matahari terbit yang spektakuler
-                                dengan latar belakang lembah hijau dan perbukitan yang membentang sejauh mata memandang.
+                                Puncak Manud adalah titik tertinggi di kawasan
+                                Desa Manud Jaya, menawarkan pemandangan 360
+                                derajat yang memukau dari puncak gunung. Dari
+                                sini, pengunjung dapat menyaksikan matahari
+                                terbit yang spektakuler dengan latar belakang
+                                lembah hijau dan perbukitan yang membentang
+                                sejauh mata memandang.
                             </p>
                             <p className="mt-4 leading-relaxed text-muted-foreground">
-                                Jalur pendakian menuju puncak melewati hutan tropis yang masih asri, dihiasi dengan berbagai jenis
-                                flora dan fauna endemik. Perjalanan menuju puncak membutuhkan waktu sekitar 2-3 jam, menjadikannya
-                                cocok untuk pendaki pemula maupun berpengalaman.
+                                Jalur pendakian menuju puncak melewati hutan
+                                tropis yang masih asri, dihiasi dengan berbagai
+                                jenis flora dan fauna endemik. Perjalanan menuju
+                                puncak membutuhkan waktu sekitar 2-3 jam,
+                                menjadikannya cocok untuk pendaki pemula maupun
+                                berpengalaman.
                             </p>
 
-                            <h3 className="mt-10 text-xl font-semibold">Highlights</h3>
+                            <h3 className="mt-10 text-xl font-semibold">
+                                Highlights
+                            </h3>
                             <ul className="mt-4 space-y-3">
                                 {[
                                     'Pemandangan sunrise spektakuler di atas lautan awan',
@@ -56,20 +88,27 @@ export default function PuncakManud({ canRegister = true }: { canRegister?: bool
                                     'Camping ground di area puncak',
                                     'Flora dan fauna endemik sepanjang jalur pendakian',
                                 ].map((item) => (
-                                    <li key={item} className="flex items-start gap-3">
+                                    <li
+                                        key={item}
+                                        className="flex items-start gap-3"
+                                    >
                                         <TrendingUp className="mt-0.5 h-5 w-5 shrink-0 text-emerald-500" />
-                                        <span className="text-muted-foreground">{item}</span>
+                                        <span className="text-muted-foreground">
+                                            {item}
+                                        </span>
                                     </li>
                                 ))}
                             </ul>
 
                             {/* Gallery placeholder */}
-                            <h3 className="mt-10 text-xl font-semibold">Galeri</h3>
+                            <h3 className="mt-10 text-xl font-semibold">
+                                Galeri
+                            </h3>
                             <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3">
                                 {Array.from({ length: 6 }).map((_, i) => (
                                     <div
                                         key={i}
-                                        className="flex aspect-[4/3] items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400/20 to-cyan-500/20 border border-border"
+                                        className="flex aspect-[4/3] items-center justify-center rounded-xl border border-border bg-gradient-to-br from-emerald-400/20 to-cyan-500/20"
                                     >
                                         <Mountain className="h-8 w-8 text-muted-foreground/40" />
                                     </div>
@@ -80,34 +119,53 @@ export default function PuncakManud({ canRegister = true }: { canRegister?: bool
                         {/* Info sidebar */}
                         <div>
                             <div className="rounded-xl border border-border bg-card p-6">
-                                <h3 className="text-lg font-semibold">Informasi</h3>
+                                <h3 className="text-lg font-semibold">
+                                    Informasi
+                                </h3>
                                 <dl className="mt-4 space-y-4">
                                     <div className="flex items-start gap-3">
                                         <Mountain className="mt-0.5 h-5 w-5 text-emerald-500" />
                                         <div>
-                                            <dt className="text-sm font-medium">Ketinggian</dt>
-                                            <dd className="text-sm text-muted-foreground">2.150 mdpl</dd>
+                                            <dt className="text-sm font-medium">
+                                                Ketinggian
+                                            </dt>
+                                            <dd className="text-sm text-muted-foreground">
+                                                2.150 mdpl
+                                            </dd>
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-3">
                                         <Clock className="mt-0.5 h-5 w-5 text-emerald-500" />
                                         <div>
-                                            <dt className="text-sm font-medium">Waktu Terbaik</dt>
-                                            <dd className="text-sm text-muted-foreground">April — September (musim kemarau)</dd>
+                                            <dt className="text-sm font-medium">
+                                                Waktu Terbaik
+                                            </dt>
+                                            <dd className="text-sm text-muted-foreground">
+                                                April — September (musim
+                                                kemarau)
+                                            </dd>
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-3">
                                         <Signpost className="mt-0.5 h-5 w-5 text-emerald-500" />
                                         <div>
-                                            <dt className="text-sm font-medium">Tingkat Kesulitan</dt>
-                                            <dd className="text-sm text-muted-foreground">Sedang (cocok untuk pemula)</dd>
+                                            <dt className="text-sm font-medium">
+                                                Tingkat Kesulitan
+                                            </dt>
+                                            <dd className="text-sm text-muted-foreground">
+                                                Sedang (cocok untuk pemula)
+                                            </dd>
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-3">
                                         <ThermometerSun className="mt-0.5 h-5 w-5 text-emerald-500" />
                                         <div>
-                                            <dt className="text-sm font-medium">Suhu</dt>
-                                            <dd className="text-sm text-muted-foreground">12°C — 22°C</dd>
+                                            <dt className="text-sm font-medium">
+                                                Suhu
+                                            </dt>
+                                            <dd className="text-sm text-muted-foreground">
+                                                12°C — 22°C
+                                            </dd>
                                         </div>
                                     </div>
                                 </dl>

@@ -1,5 +1,14 @@
 import { Head, Link, usePage } from '@inertiajs/react';
-import { Cherry, Droplets, MapPin, Mountain, Quote, Star, Tent, TreePalm } from 'lucide-react';
+import {
+    Cherry,
+    Droplets,
+    MapPin,
+    Mountain,
+    Quote,
+    Star,
+    Tent,
+    TreePalm,
+} from 'lucide-react';
 
 import WisataNavbar from '@/components/wisata-navbar';
 import { dashboard, register } from '@/routes';
@@ -7,7 +16,8 @@ import { dashboard, register } from '@/routes';
 const destinations = [
     {
         name: 'Puncak Manud',
-        description: 'Panoramic mountain viewpoint offering breathtaking sunrise vistas over the village and surrounding valleys.',
+        description:
+            'Panoramic mountain viewpoint offering breathtaking sunrise vistas over the village and surrounding valleys.',
         rating: 4.9,
         gradient: 'from-emerald-400 to-cyan-500',
         icon: Mountain,
@@ -15,7 +25,8 @@ const destinations = [
     },
     {
         name: 'Kebun Stroberi Manud Jaya',
-        description: 'Lush strawberry fields where visitors can pick their own fresh berries amidst the cool highland air.',
+        description:
+            'Lush strawberry fields where visitors can pick their own fresh berries amidst the cool highland air.',
         rating: 4.8,
         gradient: 'from-pink-400 to-rose-500',
         icon: Cherry,
@@ -23,7 +34,8 @@ const destinations = [
     },
     {
         name: 'Air Terjun Cahaya',
-        description: 'A stunning 40-meter waterfall hidden in the tropical forest, perfect for swimming and nature photography.',
+        description:
+            'A stunning 40-meter waterfall hidden in the tropical forest, perfect for swimming and nature photography.',
         rating: 4.9,
         gradient: 'from-blue-400 to-indigo-500',
         icon: Droplets,
@@ -31,21 +43,24 @@ const destinations = [
     },
     {
         name: 'Bukit Embun',
-        description: 'A misty hilltop trail surrounded by pine trees, ideal for morning hikes and camping under the stars.',
+        description:
+            'A misty hilltop trail surrounded by pine trees, ideal for morning hikes and camping under the stars.',
         rating: 4.7,
         gradient: 'from-teal-400 to-emerald-600',
         icon: Tent,
     },
     {
         name: 'Taman Bunga Desa',
-        description: 'A colorful flower garden cultivated by local villagers, showcasing native highland blooms year-round.',
+        description:
+            'A colorful flower garden cultivated by local villagers, showcasing native highland blooms year-round.',
         rating: 4.6,
         gradient: 'from-orange-400 to-amber-500',
         icon: TreePalm,
     },
     {
         name: 'Sungai Jernih',
-        description: 'Crystal-clear river flowing through the village, popular for tubing, fishing, and riverside picnics.',
+        description:
+            'Crystal-clear river flowing through the village, popular for tubing, fishing, and riverside picnics.',
         rating: 4.8,
         gradient: 'from-sky-400 to-blue-600',
         icon: Droplets,
@@ -70,14 +85,21 @@ const testimonials = [
     },
 ];
 
-export default function Welcome({ canRegister = true }: { canRegister?: boolean }) {
+export default function Welcome({
+    canRegister = true,
+}: {
+    canRegister?: boolean;
+}) {
     const { auth } = usePage().props;
 
     return (
         <>
             <Head title="Desa Manud Jaya — Wisata Alam">
                 <link rel="preconnect" href="https://fonts.bunny.net" />
-                <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600,700" rel="stylesheet" />
+                <link
+                    href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600,700"
+                    rel="stylesheet"
+                />
             </Head>
 
             <div className="min-h-screen bg-background text-foreground">
@@ -96,8 +118,10 @@ export default function Welcome({ canRegister = true }: { canRegister?: boolean 
                                     </span>
                                 </h1>
                                 <p className="mt-6 text-lg leading-8 text-muted-foreground">
-                                    Nikmati keindahan pegunungan, kesegaran kebun stroberi, dan pesona air terjun tersembunyi
-                                    di desa wisata alam yang masih asri di jantung Indonesia.
+                                    Nikmati keindahan pegunungan, kesegaran
+                                    kebun stroberi, dan pesona air terjun
+                                    tersembunyi di desa wisata alam yang masih
+                                    asri di jantung Indonesia.
                                 </p>
                                 <div className="mt-10 flex items-center justify-center gap-4">
                                     <a
@@ -118,31 +142,43 @@ export default function Welcome({ canRegister = true }: { canRegister?: boolean 
                     </section>
 
                     {/* Destinasi Wisata */}
-                    <section id="destinations" className="mx-auto max-w-7xl px-6 py-20 lg:py-28">
+                    <section
+                        id="destinations"
+                        className="mx-auto max-w-7xl px-6 py-20 lg:py-28"
+                    >
                         <div className="mx-auto max-w-2xl text-center">
-                            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Destinasi Wisata</h2>
+                            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+                                Destinasi Wisata
+                            </h2>
                             <p className="mt-4 text-lg text-muted-foreground">
-                                Tempat-tempat pilihan yang menawarkan pengalaman luar biasa bagi setiap pengunjung.
+                                Tempat-tempat pilihan yang menawarkan pengalaman
+                                luar biasa bagi setiap pengunjung.
                             </p>
                         </div>
                         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                             {destinations.map((dest) => {
                                 const card = (
-                                    <div
-                                        className="group overflow-hidden rounded-xl border border-border bg-card transition-shadow hover:shadow-lg"
-                                    >
-                                        <div className={`flex h-48 items-center justify-center bg-gradient-to-br ${dest.gradient}`}>
+                                    <div className="group overflow-hidden rounded-xl border border-border bg-card transition-shadow hover:shadow-lg">
+                                        <div
+                                            className={`flex h-48 items-center justify-center bg-gradient-to-br ${dest.gradient}`}
+                                        >
                                             <dest.icon className="h-16 w-16 text-white/80 transition-transform group-hover:scale-110" />
                                         </div>
                                         <div className="p-5">
                                             <div className="flex items-center justify-between">
-                                                <h3 className="font-semibold text-card-foreground">{dest.name}</h3>
+                                                <h3 className="font-semibold text-card-foreground">
+                                                    {dest.name}
+                                                </h3>
                                                 <div className="flex items-center gap-1">
                                                     <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
-                                                    <span className="text-sm font-medium">{dest.rating}</span>
+                                                    <span className="text-sm font-medium">
+                                                        {dest.rating}
+                                                    </span>
                                                 </div>
                                             </div>
-                                            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{dest.description}</p>
+                                            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                                                {dest.description}
+                                            </p>
                                         </div>
                                     </div>
                                 );
@@ -159,12 +195,18 @@ export default function Welcome({ canRegister = true }: { canRegister?: boolean 
                     </section>
 
                     {/* Testimoni */}
-                    <section id="testimonials" className="border-y border-border bg-muted/50">
+                    <section
+                        id="testimonials"
+                        className="border-y border-border bg-muted/50"
+                    >
                         <div className="mx-auto max-w-7xl px-6 py-20 lg:py-28">
                             <div className="mx-auto max-w-2xl text-center">
-                                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Kata Pengunjung</h2>
+                                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+                                    Kata Pengunjung
+                                </h2>
                                 <p className="mt-4 text-lg text-muted-foreground">
-                                    Cerita nyata dari para wisatawan yang telah menjelajahi Desa Manud Jaya.
+                                    Cerita nyata dari para wisatawan yang telah
+                                    menjelajahi Desa Manud Jaya.
                                 </p>
                             </div>
                             <div className="mt-12 grid gap-8 md:grid-cols-3">
@@ -174,13 +216,17 @@ export default function Welcome({ canRegister = true }: { canRegister?: boolean 
                                         className="rounded-xl border border-border bg-card p-6"
                                     >
                                         <Quote className="mb-4 h-8 w-8 text-muted-foreground/40" />
-                                        <p className="text-sm leading-relaxed text-card-foreground">{t.quote}</p>
+                                        <p className="text-sm leading-relaxed text-card-foreground">
+                                            {t.quote}
+                                        </p>
                                         <div className="mt-6 flex items-center gap-3">
                                             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-sm font-semibold text-primary-foreground">
                                                 {t.name.charAt(0)}
                                             </div>
                                             <div>
-                                                <p className="text-sm font-medium">{t.name}</p>
+                                                <p className="text-sm font-medium">
+                                                    {t.name}
+                                                </p>
                                                 <p className="flex items-center gap-1 text-xs text-muted-foreground">
                                                     <MapPin className="h-3 w-3" />
                                                     {t.location}
@@ -194,14 +240,18 @@ export default function Welcome({ canRegister = true }: { canRegister?: boolean 
                     </section>
 
                     {/* CTA */}
-                    <section id="contact" className="mx-auto max-w-7xl px-6 py-20 lg:py-28">
+                    <section
+                        id="contact"
+                        className="mx-auto max-w-7xl px-6 py-20 lg:py-28"
+                    >
                         <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-500 to-emerald-500 px-6 py-16 text-center sm:px-16">
                             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
                                 Siap Menjelajahi Desa Manud Jaya?
                             </h2>
                             <p className="mx-auto mt-4 max-w-xl text-lg text-white/80">
-                                Bergabunglah dengan ribuan wisatawan yang telah menemukan keindahan alam tersembunyi di desa kami.
-                                Petualangan Anda dimulai di sini.
+                                Bergabunglah dengan ribuan wisatawan yang telah
+                                menemukan keindahan alam tersembunyi di desa
+                                kami. Petualangan Anda dimulai di sini.
                             </p>
                             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
                                 {auth.user ? (
@@ -243,17 +293,29 @@ export default function Welcome({ canRegister = true }: { canRegister?: boolean 
                                 <span>Desa Manud Jaya</span>
                             </div>
                             <div className="flex gap-6">
-                                <a href="#destinations" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+                                <a
+                                    href="#destinations"
+                                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                                >
                                     Wisata
                                 </a>
-                                <a href="#testimonials" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+                                <a
+                                    href="#testimonials"
+                                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                                >
                                     Testimoni
                                 </a>
-                                <a href="#contact" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+                                <a
+                                    href="#contact"
+                                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                                >
                                     Kontak
                                 </a>
                             </div>
-                            <p className="text-sm text-muted-foreground">&copy; 2026 Desa Manud Jaya. Hak cipta dilindungi.</p>
+                            <p className="text-sm text-muted-foreground">
+                                &copy; 2026 Desa Manud Jaya. Hak cipta
+                                dilindungi.
+                            </p>
                         </div>
                     </div>
                 </footer>

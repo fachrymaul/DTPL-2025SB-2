@@ -1,5 +1,5 @@
 import { Head } from '@inertiajs/react';
-import { Clock, Mail, MapPin, Mountain, Phone } from 'lucide-react';
+import { Mail, MapPin, Mountain, Phone } from 'lucide-react';
 
 import WisataNavbar from '@/components/wisata-navbar';
 

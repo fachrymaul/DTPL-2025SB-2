@@ -22,17 +22,19 @@ export default function Kontak({
                 <WisataNavbar canRegister={canRegister} />
 
                 {/* Hero */}
-                <section className="relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 via-transparent to-blue-500/20 dark:from-emerald-500/10 dark:to-blue-500/10" />
-                    <div className="relative mx-auto max-w-7xl px-6 py-20 sm:py-28">
-                        <div className="mx-auto max-w-2xl text-center">
-                            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-                                Kontak{' '}
-                                <span className="bg-gradient-to-r from-emerald-500 to-blue-500 bg-clip-text text-transparent">
-                                    Kami
-                                </span>
+                <section className="relative">
+                    <img
+                        src="/images/kontak_hero.png"
+                        alt="Kontak Kami"
+                        className="block w-full"
+                    />
+                    <div className="absolute inset-0 bg-black/50" />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="mx-auto max-w-2xl px-6 text-center">
+                            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
+                                Kontak Kami
                             </h1>
-                            <p className="mt-4 text-lg text-muted-foreground">
+                            <p className="mt-4 text-lg text-white/80">
                                 Hubungi kami untuk informasi lebih lanjut
                                 tentang wisata, penginapan, atau kunjungan ke
                                 Desa Manud Jaya.

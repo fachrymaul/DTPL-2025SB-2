@@ -22,17 +22,19 @@ export default function AkomodasiTransportasi({
                 <WisataNavbar canRegister={canRegister} />
 
                 {/* Hero */}
-                <section className="relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-transparent to-emerald-500/20 dark:from-blue-500/10 dark:to-emerald-500/10" />
-                    <div className="relative mx-auto max-w-7xl px-6 py-20 sm:py-28">
-                        <div className="mx-auto max-w-2xl text-center">
-                            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-                                Akomodasi &{' '}
-                                <span className="bg-gradient-to-r from-blue-500 to-emerald-500 bg-clip-text text-transparent">
-                                    Transportasi
-                                </span>
+                <section className="relative">
+                    <img
+                        src="/images/akomodasi_hero.png"
+                        alt="Akomodasi & Transportasi"
+                        className="block w-full"
+                    />
+                    <div className="absolute inset-0 bg-black/50" />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="mx-auto max-w-2xl px-6 text-center">
+                            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
+                                Akomodasi & Transportasi
                             </h1>
-                            <p className="mt-4 text-lg text-muted-foreground">
+                            <p className="mt-4 text-lg text-white/80">
                                 Panduan lengkap penginapan dan perjalanan menuju
                                 Desa Manud Jaya.
                             </p>

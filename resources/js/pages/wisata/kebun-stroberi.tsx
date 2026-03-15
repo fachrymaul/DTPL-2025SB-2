@@ -34,17 +34,19 @@ export default function KebunStroberi({
                 />
 
                 {/* Hero */}
-                <section className="relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-pink-500/20 via-transparent to-rose-500/20 dark:from-pink-500/10 dark:to-rose-500/10" />
-                    <div className="relative mx-auto max-w-7xl px-6 py-20 sm:py-28">
-                        <div className="mx-auto max-w-2xl text-center">
-                            <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-pink-400 to-rose-500">
-                                <Cherry className="h-10 w-10 text-white" />
-                            </div>
-                            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
+                <section className="relative">
+                    <img
+                        src="/images/stroberi_hero.png"
+                        alt="Kebun Stroberi Manud Jaya"
+                        className="block w-full"
+                    />
+                    <div className="absolute inset-0 bg-black/50" />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="mx-auto max-w-2xl px-6 text-center">
+                            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
                                 Kebun Stroberi Manud Jaya
                             </h1>
-                            <p className="mt-4 text-lg text-muted-foreground">
+                            <p className="mt-4 text-lg text-white/80">
                                 Lush strawberry fields where visitors can pick
                                 their own fresh berries amidst the cool highland
                                 air.
@@ -159,12 +161,12 @@ export default function KebunStroberi({
                             </h3>
                             <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3">
                                 {Array.from({ length: 6 }).map((_, i) => (
-                                    <div
+                                    <img
                                         key={i}
-                                        className="flex aspect-[4/3] items-center justify-center rounded-xl border border-border bg-gradient-to-br from-pink-400/20 to-rose-500/20"
-                                    >
-                                        <Cherry className="h-8 w-8 text-muted-foreground/40" />
-                                    </div>
+                                        src={`/images/stroberi_galeri_${i + 1}.png`}
+                                        alt={`Galeri Kebun Stroberi ${i + 1}`}
+                                        className="aspect-[4/3] rounded-xl object-cover"
+                                    />
                                 ))}
                             </div>
                         </div>

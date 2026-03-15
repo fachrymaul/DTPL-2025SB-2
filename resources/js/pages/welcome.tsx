@@ -9,7 +9,7 @@ const destinations = [
         name: 'Puncak Manud',
         description:
             'Panoramic mountain viewpoint offering breathtaking sunrise vistas over the village and surrounding valleys.',
-        gradient: 'from-emerald-400 to-cyan-500',
+        image: '/images/landing_wisata_puncak.png',
         icon: Mountain,
         href: '/wisata/puncak-manud',
     },
@@ -17,7 +17,7 @@ const destinations = [
         name: 'Kebun Stroberi Manud Jaya',
         description:
             'Lush strawberry fields where visitors can pick their own fresh berries amidst the cool highland air.',
-        gradient: 'from-pink-400 to-rose-500',
+        image: '/images/landing_wisata_stroberi.png',
         icon: Cherry,
         href: '/wisata/kebun-stroberi',
     },
@@ -25,7 +25,7 @@ const destinations = [
         name: 'Air Terjun Manud Jaya',
         description:
             'A stunning 40-meter waterfall hidden in the tropical forest, perfect for swimming and nature photography.',
-        gradient: 'from-blue-400 to-indigo-500',
+        image: '/images/landing_wisata_airterjun.png',
         icon: Droplets,
         href: '/wisata/air-terjun-cahaya',
     },
@@ -54,16 +54,23 @@ export default function Welcome({
                 <main>
                     {/* Hero */}
                     <section className="relative overflow-hidden">
-                        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-emerald-500/10 dark:from-blue-500/5 dark:to-emerald-500/5" />
+                        <div className="absolute inset-0">
+                            <img
+                                src="/images/landing_hero.png"
+                                alt="Desa Manud Jaya"
+                                className="h-full w-full object-cover"
+                            />
+                            <div className="absolute inset-0 bg-black/50" />
+                        </div>
                         <div className="relative mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:py-40">
                             <div className="mx-auto max-w-2xl text-center">
-                                <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+                                <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
                                     Selamat Datang di{' '}
-                                    <span className="bg-gradient-to-r from-blue-500 to-emerald-500 bg-clip-text text-transparent">
+                                    <span className="bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
                                         Desa Manud Jaya
                                     </span>
                                 </h1>
-                                <p className="mt-6 text-lg leading-8 text-muted-foreground">
+                                <p className="mt-6 text-lg leading-8 text-white/80">
                                     Nikmati keindahan pegunungan, kesegaran
                                     kebun stroberi, dan pesona air terjun
                                     tersembunyi di desa wisata alam yang masih
@@ -78,7 +85,7 @@ export default function Welcome({
                                     </a>
                                     <Link
                                         href="/akomodasi-transportasi"
-                                        className="rounded-lg border border-border px-6 py-3 text-sm font-semibold transition-colors hover:bg-accent"
+                                        className="rounded-lg bg-white px-6 py-3 text-sm font-semibold text-black transition-colors hover:bg-white/90"
                                     >
                                         Akomodasi & Transportasi
                                     </Link>
@@ -105,10 +112,14 @@ export default function Welcome({
                             {destinations.map((dest) => (
                                 <Link key={dest.name} href={dest.href}>
                                     <div className="group overflow-hidden rounded-xl border border-border bg-card transition-shadow hover:shadow-lg">
-                                        <div
-                                            className={`flex h-48 items-center justify-center bg-gradient-to-br ${dest.gradient}`}
-                                        >
-                                            <dest.icon className="h-16 w-16 text-white/80 transition-transform group-hover:scale-110" />
+                                        <div className="relative flex h-48 items-center justify-center">
+                                            <img
+                                                src={dest.image}
+                                                alt={dest.name}
+                                                className="absolute inset-0 h-full w-full object-cover"
+                                            />
+                                            <div className="absolute inset-0 bg-black/30" />
+                                            <dest.icon className="relative h-16 w-16 text-white/80 transition-transform group-hover:scale-110" />
                                         </div>
                                         <div className="p-5">
                                             <div className="flex items-center justify-between">
@@ -151,12 +162,16 @@ export default function Welcome({
                                     </Link>
                                 </div>
                                 <div className="grid grid-cols-2 gap-4">
-                                    <div className="flex aspect-square items-center justify-center rounded-xl bg-gradient-to-br from-blue-400 to-indigo-500">
-                                        <Bus className="h-12 w-12 text-white/80" />
-                                    </div>
-                                    <div className="flex aspect-square items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400 to-cyan-500">
-                                        <Mountain className="h-12 w-12 text-white/80" />
-                                    </div>
+                                    <img
+                                        src="/images/landing_akomodasi.png"
+                                        alt="Akomodasi"
+                                        className="aspect-square rounded-xl object-cover"
+                                    />
+                                    <img
+                                        src="/images/landing_transportasi.png"
+                                        alt="Transportasi"
+                                        className="aspect-square rounded-xl object-cover"
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -164,16 +179,22 @@ export default function Welcome({
 
                     {/* CTA */}
                     <section className="mx-auto max-w-7xl px-6 py-20 lg:py-28">
-                        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-500 to-emerald-500 px-6 py-16 text-center sm:px-16">
-                            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                        <div className="relative overflow-hidden rounded-2xl px-6 py-16 text-center sm:px-16">
+                            <img
+                                src="/images/landing_bottom.png"
+                                alt="Desa Manud Jaya"
+                                className="absolute inset-0 h-full w-full object-cover"
+                            />
+                            <div className="absolute inset-0 bg-black/50" />
+                            <h2 className="relative text-3xl font-bold tracking-tight text-white sm:text-4xl">
                                 Siap Menjelajahi Desa Manud Jaya?
                             </h2>
-                            <p className="mx-auto mt-4 max-w-xl text-lg text-white/80">
+                            <p className="relative mx-auto mt-4 max-w-xl text-lg text-white/80">
                                 Bergabunglah dengan ribuan wisatawan yang telah
                                 menemukan keindahan alam tersembunyi di desa
                                 kami. Petualangan Anda dimulai di sini.
                             </p>
-                            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+                            <div className="relative mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
                                 {auth.user ? (
                                     <Link
                                         href={dashboard()}

@@ -33,17 +33,19 @@ export default function PuncakManud({
                 />
 
                 {/* Hero */}
-                <section className="relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 via-transparent to-cyan-500/20 dark:from-emerald-500/10 dark:to-cyan-500/10" />
-                    <div className="relative mx-auto max-w-7xl px-6 py-20 sm:py-28">
-                        <div className="mx-auto max-w-2xl text-center">
-                            <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-400 to-cyan-500">
-                                <Mountain className="h-10 w-10 text-white" />
-                            </div>
-                            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
+                <section className="relative">
+                    <img
+                        src="/images/puncak_hero.png"
+                        alt="Puncak Manud"
+                        className="block w-full"
+                    />
+                    <div className="absolute inset-0 bg-black/50" />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="mx-auto max-w-2xl px-6 text-center">
+                            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
                                 Puncak Manud
                             </h1>
-                            <p className="mt-4 text-lg text-muted-foreground">
+                            <p className="mt-4 text-lg text-white/80">
                                 Panoramic mountain viewpoint offering
                                 breathtaking sunrise vistas over the village and
                                 surrounding valleys.
@@ -120,12 +122,12 @@ export default function PuncakManud({
                             </h3>
                             <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3">
                                 {Array.from({ length: 6 }).map((_, i) => (
-                                    <div
+                                    <img
                                         key={i}
-                                        className="flex aspect-[4/3] items-center justify-center rounded-xl border border-border bg-gradient-to-br from-emerald-400/20 to-cyan-500/20"
-                                    >
-                                        <Mountain className="h-8 w-8 text-muted-foreground/40" />
-                                    </div>
+                                        src={`/images/puncak_galeri_${i + 1}.png`}
+                                        alt={`Galeri Puncak Manud ${i + 1}`}
+                                        className="aspect-[4/3] rounded-xl object-cover"
+                                    />
                                 ))}
                             </div>
                         </div>

@@ -2,10 +2,13 @@ import { Link, router, usePage } from '@inertiajs/react';
 import {
     Cherry,
     ChevronDown,
+    Drama,
     Droplets,
     LogOut,
     Menu,
     Mountain,
+    Music,
+    Waves,
     X,
 } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
@@ -28,8 +31,10 @@ export default function WisataNavbar({ navLinks }: WisataNavbarProps) {
     const { auth } = usePage().props;
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [wisataOpen, setWisataOpen] = useState(false);
+    const [atraksiOpen, setAtraksiOpen] = useState(false);
     const [userOpen, setUserOpen] = useState(false);
     const wisataRef = useRef<HTMLDivElement>(null);
+    const atraksiRef = useRef<HTMLDivElement>(null);
     const userRef = useRef<HTMLDivElement>(null);
 
     const wisataDestinations = [
@@ -53,8 +58,36 @@ export default function WisataNavbar({ navLinks }: WisataNavbarProps) {
         },
     ];
 
+    const atraksiItems = [
+        {
+            href: '/atraksi/konser-kecapi-suling',
+            label: 'Konser Kecapi Suling',
+            description: t.atraksiDropdown.konserKecapiSuling,
+            icon: Music,
+        },
+        {
+            href: '/atraksi/drama-sangkuriang',
+            label: 'Drama Sangkuriang',
+            description: t.atraksiDropdown.dramaSangkuriang,
+            icon: Drama,
+        },
+        {
+            href: '/atraksi/petik-strawberry',
+            label: 'Petik Strawberry',
+            description: t.atraksiDropdown.petikStrawberry,
+            icon: Cherry,
+        },
+        {
+            href: '/atraksi/rafting-cimanud',
+            label: 'Rafting Sungai Cimanud',
+            description: t.atraksiDropdown.raftingCimanud,
+            icon: Waves,
+        },
+    ];
+
     const defaultLinks: NavLink[] = [
         { href: '/akomodasi-transportasi', label: t.nav.akomodasiTransportasi },
+        { href: '/pemandu-wisata', label: t.nav.pemanduWisata },
         { href: '/kontak', label: t.nav.kontakKami },
     ];
 
@@ -68,6 +101,12 @@ export default function WisataNavbar({ navLinks }: WisataNavbarProps) {
                 !wisataRef.current.contains(e.target as Node)
             ) {
                 setWisataOpen(false);
+            }
+            if (
+                atraksiRef.current &&
+                !atraksiRef.current.contains(e.target as Node)
+            ) {
+                setAtraksiOpen(false);
             }
             if (
                 userRef.current &&
@@ -122,6 +161,42 @@ export default function WisataNavbar({ navLinks }: WisataNavbarProps) {
                                             </p>
                                             <p className="text-xs text-muted-foreground">
                                                 {dest.description}
+                                            </p>
+                                        </div>
+                                    </Link>
+                                ))}
+                            </div>
+                        )}
+                    </div>
+
+                    {/* Atraksi & Kegiatan dropdown */}
+                    <div ref={atraksiRef} className="relative">
+                        <button
+                            type="button"
+                            className="flex items-center gap-1 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                            onClick={() => setAtraksiOpen(!atraksiOpen)}
+                        >
+                            {t.nav.atraksiKegiatan}
+                            <ChevronDown
+                                className={`h-4 w-4 transition-transform ${atraksiOpen ? 'rotate-180' : ''}`}
+                            />
+                        </button>
+                        {atraksiOpen && (
+                            <div className="absolute top-full left-1/2 mt-2 w-64 -translate-x-1/2 rounded-xl border border-border bg-background p-2 shadow-lg">
+                                {atraksiItems.map((item) => (
+                                    <Link
+                                        key={item.href}
+                                        href={item.href}
+                                        className="flex items-start gap-3 rounded-lg px-3 py-2.5 transition-colors hover:bg-accent"
+                                        onClick={() => setAtraksiOpen(false)}
+                                    >
+                                        <item.icon className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                                        <div>
+                                            <p className="text-sm font-medium">
+                                                {item.label}
+                                            </p>
+                                            <p className="text-xs text-muted-foreground">
+                                                {item.description}
                                             </p>
                                         </div>
                                     </Link>
@@ -245,6 +320,38 @@ export default function WisataNavbar({ navLinks }: WisataNavbarProps) {
                                         >
                                             <dest.icon className="h-4 w-4 text-primary" />
                                             {dest.label}
+                                        </Link>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+
+                        {/* Atraksi & Kegiatan collapsible */}
+                        <div>
+                            <button
+                                type="button"
+                                className="flex w-full items-center justify-between text-sm font-medium text-muted-foreground"
+                                onClick={() => setAtraksiOpen(!atraksiOpen)}
+                            >
+                                {t.nav.atraksiKegiatan}
+                                <ChevronDown
+                                    className={`h-4 w-4 transition-transform ${atraksiOpen ? 'rotate-180' : ''}`}
+                                />
+                            </button>
+                            {atraksiOpen && (
+                                <div className="mt-2 flex flex-col gap-1 pl-4">
+                                    {atraksiItems.map((item) => (
+                                        <Link
+                                            key={item.href}
+                                            href={item.href}
+                                            className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-accent"
+                                            onClick={() => {
+                                                setAtraksiOpen(false);
+                                                setMobileMenuOpen(false);
+                                            }}
+                                        >
+                                            <item.icon className="h-4 w-4 text-primary" />
+                                            {item.label}
                                         </Link>
                                     ))}
                                 </div>

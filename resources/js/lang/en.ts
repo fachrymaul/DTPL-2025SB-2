@@ -1,9 +1,27 @@
 const en = {
+    // Promo popup
+    promoPopup: {
+        badge: 'Special Promo',
+        title: 'Manud Jaya Cultural Festival!',
+        description:
+            'Welcome back! Great news for you. Desa Manud Jaya is hosting a Cultural Festival featuring exciting performances and special discounts on all attractions.',
+        eventTitle: 'Manud Jaya Cultural Festival 2026',
+        eventDate: 'April 12 — 14, 2026',
+        eventLocation: 'Amphitheater & Pendopo Budaya Desa Manud Jaya',
+        eventDiscount: '30% off all attraction tickets!',
+        codeLabel: 'Use this promo code when booking:',
+        code: 'FESTIVAL2026',
+        dismissBtn: 'Maybe Later',
+        ctaBtn: 'View Attractions',
+    },
+
     // Navbar
     nav: {
         wisata: 'Tourism',
         akomodasiTransportasi: 'Accommodation & Transport',
         kontakKami: 'Contact Us',
+        pemanduWisata: 'Tour Guides',
+        atraksiKegiatan: 'Attractions & Activities',
         dashboard: 'Dashboard',
         login: 'Login',
         register: 'Register',
@@ -16,6 +34,14 @@ const en = {
         puncakManud: 'Mountain panorama & sunrise',
         kebunStroberi: 'Pick fresh strawberries',
         airTerjun: '40-meter waterfall',
+    },
+
+    // Atraksi & Kegiatan dropdown descriptions
+    atraksiDropdown: {
+        konserKecapiSuling: 'Traditional Sundanese music',
+        dramaSangkuriang: 'Musical drama performance',
+        petikStrawberry: 'Fresh fruit picking experience',
+        raftingCimanud: 'Exciting river rafting',
     },
 
     // Welcome page
@@ -309,6 +335,260 @@ const en = {
             'Follow the main road for \u00B1 50 km passing through Kecamatan Lembah.',
             'Turn right at the Pos Jaga Gunung intersection, follow signs to "Desa Manud Jaya".',
             'Continue for \u00B1 10 km until you reach the village gate.',
+        ],
+        backToHome: 'Back to Home',
+        copyright: '\u00A9 2026 Desa Manud Jaya. All rights reserved.',
+    },
+
+    // Pemandu Wisata page
+    pemanduWisata: {
+        title: 'Tour Guides',
+        heroDesc:
+            'Find experienced tour guides to accompany your journey exploring the beauty of Desa Manud Jaya.',
+        listTitle: 'Tour Guide Directory',
+        listDesc:
+            'Choose a tour guide that suits your needs. All our guides are experienced and know every corner of Desa Manud Jaya.',
+        languageLabel: 'Languages',
+        rateLabel: 'Rate',
+        contactLabel: 'Contact',
+        guides: [
+            {
+                name: 'Pak Hendra',
+                specialty: 'Mountain Hiking Guide',
+                languages: 'Indonesian, Sundanese',
+                rate: 'Rp150,000 / day',
+                phone: '0812-3456-7890',
+            },
+            {
+                name: 'Pak Joko',
+                specialty: 'Waterfall & Trekking Guide',
+                languages: 'Indonesian, English',
+                rate: 'Rp200,000 / day',
+                phone: '0813-2233-4455',
+            },
+            {
+                name: 'Ibu Rina',
+                specialty: 'Strawberry Farm & Education Guide',
+                languages: 'Indonesian, English, Japanese',
+                rate: 'Rp175,000 / day',
+                phone: '0857-1122-3344',
+            },
+            {
+                name: 'Pak Dedi',
+                specialty: 'Village & Cultural Guide',
+                languages: 'Indonesian, Sundanese, English',
+                rate: 'Rp150,000 / day',
+                phone: '0821-5566-7788',
+            },
+            {
+                name: 'Pak Asep',
+                specialty: 'Photography & Nature Guide',
+                languages: 'Indonesian, English',
+                rate: 'Rp250,000 / day',
+                phone: '0878-9900-1122',
+            },
+            {
+                name: 'Ibu Siti',
+                specialty: 'Family Tour Guide',
+                languages: 'Indonesian, Sundanese, Malay',
+                rate: 'Rp125,000 / day',
+                phone: '0812-6677-8899',
+            },
+        ],
+        backToHome: 'Back to Home',
+        copyright: '\u00A9 2026 Desa Manud Jaya. All rights reserved.',
+    },
+
+    // Konser Kecapi Suling page
+    konserKecapiSuling: {
+        title: 'Kecapi Suling Music Concert',
+        heroDesc:
+            'Enjoy the enchanting sounds of traditional Sundanese music amidst the natural beauty of Desa Manud Jaya.',
+        aboutTitle: 'About the Kecapi Suling Concert',
+        aboutP1:
+            'The Kecapi Suling Music Concert is a traditional Sundanese music performance featuring the harmonious blend of kecapi (zither) and suling (bamboo flute). This show is held regularly in Desa Manud Jaya as an effort to preserve Sundanese culture while providing an authentic cultural experience for tourists.',
+        aboutP2:
+            'The performing musicians are local artists with decades of experience playing traditional instruments. Each performance creates a solemn and calming atmosphere, with the mountain landscape backdrop adding to the beauty of the viewing experience.',
+        highlightsTitle: 'Performance Highlights',
+        highlights: [
+            'Kecapi suling performance by experienced local artists',
+            'Soothing traditional Sundanese music',
+            'Stunning mountain scenery backdrop',
+            'Interact with musicians and learn about traditional instruments',
+            'Q&A session about Sundanese music history',
+        ],
+        repertoireTitle: 'Song Repertoire',
+        repertoire: [
+            'Bubuy Bulan — Classic Sundanese song',
+            'Es Lilin — Popular Sundanese folk song',
+            'Manuk Dadali — Symbol of Sundanese pride',
+            'Cinta Nusa — Patriotic Sundanese music',
+            'Kalangkang — Meaningful Sundanese song',
+            'Sabilulungan — Sundanese unity song',
+        ],
+        infoTitle: 'Information',
+        schedule: 'Schedule',
+        scheduleValue: 'Every Saturday & Sunday, 7:00 PM — 9:00 PM',
+        duration: 'Duration',
+        durationValue: '\u00B1 2 hours',
+        venue: 'Venue',
+        venueValue: 'Pendopo Budaya Desa Manud Jaya',
+        capacity: 'Capacity',
+        capacityValue: '100 spectators',
+        ticketPrice: 'Ticket Prices',
+        ticketPrices: [
+            'Adult: Rp25,000 / person',
+            'Children (6-12 years): Rp15,000 / person',
+            'Children under 6: Free',
+        ],
+        backToHome: 'Back to Home',
+        copyright: '\u00A9 2026 Desa Manud Jaya. All rights reserved.',
+    },
+
+    // Drama Musikal Sangkuriang page
+    dramaSangkuriang: {
+        title: 'Sangkuriang Musical Drama',
+        heroDesc:
+            'Witness the legendary story of Sangkuriang in a spectacular musical drama performance in Desa Manud Jaya.',
+        aboutTitle: 'About Sangkuriang Musical Drama',
+        aboutP1:
+            'The Sangkuriang Musical Drama is an art performance based on the famous legend from the Sundanese land. This show combines elements of theater, dance, traditional music, and visual effects to present the story of Sangkuriang in a dramatic and captivating way.',
+        aboutP2:
+            'The love story of Sangkuriang and Dayang Sumbi is packaged in a modern musical drama format while maintaining Sundanese cultural values. The performers are trained local artists and actors, supported by gamelan musicians and other traditional instruments.',
+        aboutP3:
+            'This performance is not only entertaining but also educates the audience about the richness of Sundanese culture and folklore, making it an unforgettable experience for tourists from all backgrounds.',
+        highlightsTitle: 'Performance Highlights',
+        highlights: [
+            'Musical drama performance with the legendary Sangkuriang story',
+            'Combination of theater, traditional dance, and gamelan music',
+            'Grand costumes and stage design',
+            'Dramatic visual effects and lighting',
+            'Performed by talented local artists and actors',
+        ],
+        castTitle: 'Main Characters',
+        cast: [
+            'Sangkuriang — The brave young man',
+            'Dayang Sumbi — The beautiful and wise woman',
+            'Tumang — The divine dog',
+            'Narrator — The legend storyteller',
+            'Background Dancers — Traditional dance ensemble',
+            'Musicians — Manud Jaya gamelan group',
+        ],
+        infoTitle: 'Information',
+        schedule: 'Schedule',
+        scheduleValue: 'Every Friday & Saturday, 7:30 PM — 9:30 PM',
+        duration: 'Duration',
+        durationValue: '\u00B1 2 hours (including 15-min intermission)',
+        venue: 'Venue',
+        venueValue: 'Open Amphitheater Desa Manud Jaya',
+        capacity: 'Capacity',
+        capacityValue: '200 spectators',
+        ticketPrice: 'Ticket Prices',
+        ticketPrices: [
+            'Regular: Rp35,000 / person',
+            'VIP (front row): Rp60,000 / person',
+            'Children (6-12 years): Rp20,000 / person',
+            'Children under 6: Free',
+        ],
+        backToHome: 'Back to Home',
+        copyright: '\u00A9 2026 Desa Manud Jaya. All rights reserved.',
+    },
+
+    // Petik Strawberry page
+    petikStrawberry: {
+        title: 'Strawberry Picking',
+        heroDesc:
+            'Experience the fun of picking fresh strawberries straight from the farm in the cool mountain air.',
+        aboutTitle: 'About Strawberry Picking Activity',
+        aboutP1:
+            'The Strawberry Picking activity is an interactive tourism experience that allows visitors to pick fresh strawberries directly from the farm. Located at the Desa Manud Jaya strawberry farm in the highlands, visitors will enjoy the cool air while selecting and picking their own strawberries.',
+        aboutP2:
+            'This activity is suitable for all ages, from children to adults. Each participant will be given a basket and guidance from local farmers on how to select and pick perfectly ripe strawberries. The picked strawberries can be enjoyed immediately or taken home as souvenirs.',
+        highlightsTitle: 'Activities',
+        highlights: [
+            'Pick fresh strawberries directly from the farm',
+            'Learn about strawberry cultivation from local farmers',
+            'Taste fresh strawberries in the garden',
+            'Take photos in the beautiful strawberry farm',
+            'Buy local strawberry products (jam, juice, chips)',
+        ],
+        packagesTitle: 'Strawberry Picking Packages',
+        packages: [
+            'Budget Package — Pick 250 grams: Rp30,000',
+            'Family Package — Pick 500 grams: Rp50,000',
+            'Premium Package — Pick 1 kg + strawberry juice: Rp90,000',
+            'Education Package (groups) — Pick + farm tour: Rp40,000/person',
+        ],
+        infoTitle: 'Information',
+        openHours: 'Opening Hours',
+        openHoursValue: '08:00 AM — 04:00 PM (daily)',
+        location: 'Location',
+        locationValue: 'Kebun Strawberry Manud Jaya, 5 min from village center',
+        groupSize: 'Capacity',
+        groupSizeValue: 'Max. 30 people per session',
+        ticketPrice: 'Prices',
+        ticketPrices: [
+            'Farm entrance: Rp15,000 / person',
+            'Picking package from: Rp30,000',
+            'Motorcycle parking: Rp5,000',
+            'Car parking: Rp10,000',
+        ],
+        backToHome: 'Back to Home',
+        copyright: '\u00A9 2026 Desa Manud Jaya. All rights reserved.',
+    },
+
+    // Rafting Sungai Cimanud page
+    raftingCimanud: {
+        title: 'Cimanud River Rafting',
+        heroDesc:
+            'Get your adrenaline pumping with white water rafting on the Cimanud River flowing between cliffs and tropical forests.',
+        aboutTitle: 'About Cimanud River Rafting',
+        aboutP1:
+            'Cimanud River Rafting offers a thrilling white water rafting experience on a river that flows through valleys and tropical forests around Desa Manud Jaya. The Cimanud River has a combination of challenging rapids and calm areas perfect for enjoying the surrounding natural scenery.',
+        aboutP2:
+            'Each group will be accompanied by a certified and experienced rafting guide. Complete safety equipment is provided including helmets, life vests, and paddles. Rafting on the Cimanud River is suitable for both beginners and experienced rafters.',
+        highlightsTitle: 'Activity Highlights',
+        highlights: [
+            'White water rafting on challenging Grade II-III rapids',
+            'Views of cliffs and tropical forests along the river',
+            'Swimming spots in calm river areas',
+            'Photo opportunities at rapids and natural scenery',
+            'Enjoy riverside lunch after rafting',
+        ],
+        safetyTitle: 'Safety & Equipment',
+        safetyItems: [
+            'International standard helmets and life vests provided',
+            'Certified rafting guide on every boat',
+            'Safety briefing before the activity',
+            'Quality rubber boats with 6-8 person capacity',
+            'Rescue team on standby along the rafting route',
+            'First aid available at start and finish points',
+        ],
+        bringTitle: 'What to Bring',
+        bringItems: [
+            'Change of clothes & towel',
+            'Water-friendly shoes (sport sandals)',
+            'Waterproof sunscreen',
+            'Waterproof camera (optional)',
+            'Personal medication if needed',
+            'Courage and enthusiasm!',
+        ],
+        infoTitle: 'Information',
+        riverGrade: 'River Grade',
+        riverGradeValue: 'Grade II — III (intermediate)',
+        distance: 'Distance',
+        distanceValue: '\u00B1 7 km',
+        duration: 'Duration',
+        durationValue: '\u00B1 2 — 3 hours (including briefing)',
+        groupSize: 'Group Size',
+        groupSizeValue: '4 — 8 people per boat',
+        ageReq: 'Age Requirement',
+        ageReqValue: 'Minimum 12 years old, able to swim',
+        ticketPrice: 'Package Prices',
+        ticketPrices: [
+            'Regular Package: Rp150,000 / person',
+            'Premium Package (incl. lunch + documentation): Rp250,000 / person',
+            'Waterproof camera rental: Rp50,000',
         ],
         backToHome: 'Back to Home',
         copyright: '\u00A9 2026 Desa Manud Jaya. All rights reserved.',

@@ -1,6 +1,7 @@
 import { Head, Link } from '@inertiajs/react';
 import { Bus, Cherry, Droplets, Mountain } from 'lucide-react';
 
+import PromoPopup from '@/components/promo-popup';
 import WisataNavbar from '@/components/wisata-navbar';
 import { useLanguage } from '@/contexts/language-context';
 
@@ -43,6 +44,7 @@ export default function Welcome() {
 
             <div className="min-h-screen bg-background text-foreground">
                 <WisataNavbar />
+                <PromoPopup />
 
                 <main>
                     {/* Hero */}

@@ -1,0 +1,191 @@
+import { Head, Link } from '@inertiajs/react';
+import {
+    ArrowLeft,
+    Cherry,
+    Clock,
+    HandCoins,
+    MapPin,
+    Mountain,
+    ShoppingBasket,
+    Users,
+} from 'lucide-react';
+
+import WisataNavbar from '@/components/wisata-navbar';
+import { useLanguage } from '@/contexts/language-context';
+
+export default function PetikStrawberry() {
+    const { t } = useLanguage();
+    const data = t.petikStrawberry;
+
+    return (
+        <>
+            <Head title={`${data.title} — Desa Manud Jaya`}>
+                <link rel="preconnect" href="https://fonts.bunny.net" />
+                <link
+                    href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600,700"
+                    rel="stylesheet"
+                />
+            </Head>
+
+            <div className="min-h-screen bg-background text-foreground">
+                <WisataNavbar />
+
+                {/* Hero */}
+                <section className="relative bg-gradient-to-br from-pink-500/20 via-pink-500/10 to-background py-20">
+                    <div className="mx-auto max-w-4xl px-6 text-center">
+                        <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-pink-500/20">
+                            <Cherry className="h-8 w-8 text-pink-600" />
+                        </div>
+                        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
+                            {data.title}
+                        </h1>
+                        <p className="mt-4 text-lg text-muted-foreground">
+                            {data.heroDesc}
+                        </p>
+                    </div>
+                </section>
+
+                {/* Content */}
+                <section className="mx-auto max-w-7xl px-6 py-16">
+                    <div className="grid gap-12 lg:grid-cols-3">
+                        {/* Main content */}
+                        <div className="lg:col-span-2">
+                            <h2 className="text-2xl font-bold">
+                                {data.aboutTitle}
+                            </h2>
+                            <p className="mt-4 leading-relaxed text-muted-foreground">
+                                {data.aboutP1}
+                            </p>
+                            <p className="mt-4 leading-relaxed text-muted-foreground">
+                                {data.aboutP2}
+                            </p>
+
+                            <h3 className="mt-10 text-xl font-semibold">
+                                {data.highlightsTitle}
+                            </h3>
+                            <ul className="mt-4 space-y-3">
+                                {data.highlights.map((item) => (
+                                    <li
+                                        key={item}
+                                        className="flex items-start gap-3"
+                                    >
+                                        <Cherry className="mt-0.5 h-5 w-5 shrink-0 text-pink-500" />
+                                        <span className="text-muted-foreground">
+                                            {item}
+                                        </span>
+                                    </li>
+                                ))}
+                            </ul>
+
+                            <h3 className="mt-10 text-xl font-semibold">
+                                {data.packagesTitle}
+                            </h3>
+                            <div className="mt-4 grid gap-4 sm:grid-cols-2">
+                                {data.packages.map((pkg) => (
+                                    <div
+                                        key={pkg}
+                                        className="flex items-start gap-3 rounded-xl border border-border bg-card px-5 py-4"
+                                    >
+                                        <ShoppingBasket className="mt-0.5 h-5 w-5 shrink-0 text-pink-500" />
+                                        <p className="text-sm text-muted-foreground">
+                                            {pkg}
+                                        </p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Info sidebar */}
+                        <div>
+                            <div className="rounded-xl border border-border bg-card p-6">
+                                <h3 className="text-lg font-semibold">
+                                    {data.infoTitle}
+                                </h3>
+                                <dl className="mt-4 space-y-4">
+                                    <div className="flex items-start gap-3">
+                                        <Clock className="mt-0.5 h-5 w-5 text-pink-500" />
+                                        <div>
+                                            <dt className="text-sm font-medium">
+                                                {data.openHours}
+                                            </dt>
+                                            <dd className="text-sm text-muted-foreground">
+                                                {data.openHoursValue}
+                                            </dd>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-start gap-3">
+                                        <MapPin className="mt-0.5 h-5 w-5 text-pink-500" />
+                                        <div>
+                                            <dt className="text-sm font-medium">
+                                                {data.location}
+                                            </dt>
+                                            <dd className="text-sm text-muted-foreground">
+                                                {data.locationValue}
+                                            </dd>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-start gap-3">
+                                        <Users className="mt-0.5 h-5 w-5 text-pink-500" />
+                                        <div>
+                                            <dt className="text-sm font-medium">
+                                                {data.groupSize}
+                                            </dt>
+                                            <dd className="text-sm text-muted-foreground">
+                                                {data.groupSizeValue}
+                                            </dd>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-start gap-3">
+                                        <HandCoins className="mt-0.5 h-5 w-5 text-pink-500" />
+                                        <div>
+                                            <dt className="text-sm font-medium">
+                                                {data.ticketPrice}
+                                            </dt>
+                                            <dd className="text-sm text-muted-foreground">
+                                                <ul className="mt-1 text-xs">
+                                                    {data.ticketPrices.map(
+                                                        (price) => (
+                                                            <li key={price}>
+                                                                {price}
+                                                            </li>
+                                                        ),
+                                                    )}
+                                                </ul>
+                                            </dd>
+                                        </div>
+                                    </div>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Back link */}
+                <section className="mx-auto max-w-7xl px-6 pb-16">
+                    <Link
+                        href="/"
+                        className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                    >
+                        <ArrowLeft className="h-4 w-4" />
+                        {data.backToHome}
+                    </Link>
+                </section>
+
+                {/* Footer */}
+                <footer className="border-t border-border">
+                    <div className="mx-auto max-w-7xl px-6 py-12">
+                        <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
+                            <div className="flex items-center gap-2 text-lg font-bold">
+                                <Mountain className="h-5 w-5 text-primary" />
+                                <span>Desa Manud Jaya</span>
+                            </div>
+                            <p className="text-sm text-muted-foreground">
+                                {data.copyright}
+                            </p>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </>
+    );
+}

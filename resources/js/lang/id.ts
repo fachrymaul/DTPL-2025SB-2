@@ -1,9 +1,27 @@
 const id = {
+    // Promo popup
+    promoPopup: {
+        badge: 'Promo Spesial',
+        title: 'Festival Budaya Manud Jaya!',
+        description:
+            'Selamat datang kembali! Ada kabar gembira untuk Anda. Desa Manud Jaya sedang mengadakan Festival Budaya dengan berbagai pertunjukan menarik dan diskon spesial untuk semua atraksi.',
+        eventTitle: 'Festival Budaya Manud Jaya 2026',
+        eventDate: '12 — 14 April 2026',
+        eventLocation: 'Amphitheater & Pendopo Budaya Desa Manud Jaya',
+        eventDiscount: 'Diskon 30% untuk semua tiket atraksi!',
+        codeLabel: 'Gunakan kode promo berikut saat pemesanan:',
+        code: 'FESTIVAL2026',
+        dismissBtn: 'Nanti Saja',
+        ctaBtn: 'Lihat Atraksi',
+    },
+
     // Navbar
     nav: {
         wisata: 'Wisata',
         akomodasiTransportasi: 'Akomodasi & Transportasi',
         kontakKami: 'Kontak Kami',
+        pemanduWisata: 'Pemandu Wisata',
+        atraksiKegiatan: 'Atraksi & Kegiatan',
         dashboard: 'Dashboard',
         login: 'Masuk',
         register: 'Daftar',
@@ -16,6 +34,14 @@ const id = {
         puncakManud: 'Panorama gunung & sunrise',
         kebunStroberi: 'Petik stroberi segar',
         airTerjun: 'Air terjun 40 meter',
+    },
+
+    // Atraksi & Kegiatan dropdown descriptions
+    atraksiDropdown: {
+        konserKecapiSuling: 'Musik tradisional Sunda',
+        dramaSangkuriang: 'Pertunjukan drama musikal',
+        petikStrawberry: 'Pengalaman petik buah segar',
+        raftingCimanud: 'Arung jeram seru di sungai',
     },
 
     // Welcome page
@@ -311,6 +337,260 @@ const id = {
             'Ikuti jalan utama selama \u00B1 50 km melewati Kecamatan Lembah.',
             'Belok kanan di pertigaan Pos Jaga Gunung, ikuti papan petunjuk "Desa Manud Jaya".',
             'Jalan terus \u00B1 10 km hingga tiba di gerbang desa.',
+        ],
+        backToHome: 'Kembali ke Beranda',
+        copyright: '\u00A9 2026 Desa Manud Jaya. Hak cipta dilindungi.',
+    },
+
+    // Pemandu Wisata page
+    pemanduWisata: {
+        title: 'Pemandu Wisata',
+        heroDesc:
+            'Temukan pemandu wisata berpengalaman untuk menemani perjalanan Anda menjelajahi keindahan Desa Manud Jaya.',
+        listTitle: 'Daftar Pemandu Wisata',
+        listDesc:
+            'Pilih pemandu wisata yang sesuai dengan kebutuhan Anda. Semua pemandu kami berpengalaman dan mengenal setiap sudut Desa Manud Jaya.',
+        languageLabel: 'Bahasa',
+        rateLabel: 'Tarif',
+        contactLabel: 'Kontak',
+        guides: [
+            {
+                name: 'Pak Hendra',
+                specialty: 'Pemandu Pendakian Gunung',
+                languages: 'Indonesia, Sunda',
+                rate: 'Rp150.000 / hari',
+                phone: '0812-3456-7890',
+            },
+            {
+                name: 'Pak Joko',
+                specialty: 'Pemandu Air Terjun & Trekking',
+                languages: 'Indonesia, Inggris',
+                rate: 'Rp200.000 / hari',
+                phone: '0813-2233-4455',
+            },
+            {
+                name: 'Ibu Rina',
+                specialty: 'Pemandu Kebun Stroberi & Edukasi',
+                languages: 'Indonesia, Inggris, Jepang',
+                rate: 'Rp175.000 / hari',
+                phone: '0857-1122-3344',
+            },
+            {
+                name: 'Pak Dedi',
+                specialty: 'Pemandu Wisata Desa & Budaya',
+                languages: 'Indonesia, Sunda, Inggris',
+                rate: 'Rp150.000 / hari',
+                phone: '0821-5566-7788',
+            },
+            {
+                name: 'Pak Asep',
+                specialty: 'Pemandu Fotografi & Alam',
+                languages: 'Indonesia, Inggris',
+                rate: 'Rp250.000 / hari',
+                phone: '0878-9900-1122',
+            },
+            {
+                name: 'Ibu Siti',
+                specialty: 'Pemandu Wisata Keluarga',
+                languages: 'Indonesia, Sunda, Melayu',
+                rate: 'Rp125.000 / hari',
+                phone: '0812-6677-8899',
+            },
+        ],
+        backToHome: 'Kembali ke Beranda',
+        copyright: '\u00A9 2026 Desa Manud Jaya. Hak cipta dilindungi.',
+    },
+
+    // Konser Kecapi Suling page
+    konserKecapiSuling: {
+        title: 'Konser Musik Kecapi Suling',
+        heroDesc:
+            'Nikmati alunan musik tradisional Sunda yang memukau di tengah keindahan alam Desa Manud Jaya.',
+        aboutTitle: 'Tentang Konser Kecapi Suling',
+        aboutP1:
+            'Konser Musik Kecapi Suling merupakan pertunjukan musik tradisional Sunda yang menampilkan perpaduan harmonis antara kecapi dan suling. Pertunjukan ini digelar secara rutin di Desa Manud Jaya sebagai upaya melestarikan budaya Sunda sekaligus memberikan pengalaman budaya yang autentik bagi para wisatawan.',
+        aboutP2:
+            'Para musisi yang tampil adalah seniman lokal yang telah berpengalaman puluhan tahun dalam memainkan alat musik tradisional. Setiap pertunjukan menghadirkan suasana yang khidmat dan menenangkan, dengan latar belakang pemandangan pegunungan yang menambah keindahan pengalaman menonton.',
+        highlightsTitle: 'Highlight Pertunjukan',
+        highlights: [
+            'Pertunjukan kecapi suling oleh seniman lokal berpengalaman',
+            'Alunan musik tradisional Sunda yang menenangkan',
+            'Latar pemandangan pegunungan yang memukau',
+            'Interaksi dengan musisi dan belajar tentang alat musik tradisional',
+            'Sesi tanya jawab tentang sejarah musik Sunda',
+        ],
+        repertoireTitle: 'Repertoar Lagu',
+        repertoire: [
+            'Bubuy Bulan — Lagu klasik Sunda',
+            'Es Lilin — Lagu rakyat Sunda populer',
+            'Manuk Dadali — Simbol kebanggaan Sunda',
+            'Cinta Nusa — Musik patriotik bernuansa Sunda',
+            'Kalangkang — Lagu Sunda penuh makna',
+            'Sabilulungan — Lagu persatuan khas Sunda',
+        ],
+        infoTitle: 'Informasi',
+        schedule: 'Jadwal',
+        scheduleValue: 'Setiap Sabtu & Minggu, 19:00 — 21:00 WIB',
+        duration: 'Durasi',
+        durationValue: '\u00B1 2 jam',
+        venue: 'Lokasi',
+        venueValue: 'Pendopo Budaya Desa Manud Jaya',
+        capacity: 'Kapasitas',
+        capacityValue: '100 penonton',
+        ticketPrice: 'Harga Tiket',
+        ticketPrices: [
+            'Dewasa : Rp25.000 / orang',
+            'Anak-anak (6-12 tahun) : Rp15.000 / orang',
+            'Anak di bawah 6 tahun : Gratis',
+        ],
+        backToHome: 'Kembali ke Beranda',
+        copyright: '\u00A9 2026 Desa Manud Jaya. Hak cipta dilindungi.',
+    },
+
+    // Drama Musikal Sangkuriang page
+    dramaSangkuriang: {
+        title: 'Drama Musikal Sangkuriang',
+        heroDesc:
+            'Saksikan kisah legendaris Sangkuriang dalam pertunjukan drama musikal yang spektakuler di Desa Manud Jaya.',
+        aboutTitle: 'Tentang Drama Musikal Sangkuriang',
+        aboutP1:
+            'Drama Musikal Sangkuriang merupakan pertunjukan seni yang mengangkat legenda terkenal dari tanah Sunda. Pertunjukan ini menggabungkan unsur teater, tari, musik tradisional, dan efek visual untuk menghadirkan cerita Sangkuriang secara dramatik dan memukau.',
+        aboutP2:
+            'Kisah cinta Sangkuriang dan Dayang Sumbi dikemas dalam format drama musikal modern dengan tetap mempertahankan nilai-nilai budaya Sunda. Para pemain adalah seniman dan aktor lokal yang terlatih, didukung oleh pengiring musik gamelan dan alat musik tradisional lainnya.',
+        aboutP3:
+            'Pertunjukan ini tidak hanya menghibur tetapi juga mendidik penonton tentang kekayaan budaya dan cerita rakyat Sunda, menjadikannya pengalaman yang tak terlupakan bagi wisatawan dari berbagai latar belakang.',
+        highlightsTitle: 'Highlight Pertunjukan',
+        highlights: [
+            'Pertunjukan drama musikal dengan cerita legendaris Sangkuriang',
+            'Kombinasi teater, tari tradisional, dan musik gamelan',
+            'Kostum dan tata panggung yang megah',
+            'Efek visual dan pencahayaan yang dramatis',
+            'Diperankan oleh seniman dan aktor lokal berbakat',
+        ],
+        castTitle: 'Karakter Utama',
+        cast: [
+            'Sangkuriang — Pemuda gagah perkasa',
+            'Dayang Sumbi — Wanita cantik nan bijaksana',
+            'Tumang — Anjing jelmaan dewa',
+            'Narrator — Pencerita legenda',
+            'Penari Latar — Ensemble tari tradisional',
+            'Pengiring Musik — Grup gamelan Manud Jaya',
+        ],
+        infoTitle: 'Informasi',
+        schedule: 'Jadwal',
+        scheduleValue: 'Setiap Jumat & Sabtu, 19:30 — 21:30 WIB',
+        duration: 'Durasi',
+        durationValue: '\u00B1 2 jam (termasuk istirahat 15 menit)',
+        venue: 'Lokasi',
+        venueValue: 'Amphitheater Terbuka Desa Manud Jaya',
+        capacity: 'Kapasitas',
+        capacityValue: '200 penonton',
+        ticketPrice: 'Harga Tiket',
+        ticketPrices: [
+            'Reguler : Rp35.000 / orang',
+            'VIP (baris depan) : Rp60.000 / orang',
+            'Anak-anak (6-12 tahun) : Rp20.000 / orang',
+            'Anak di bawah 6 tahun : Gratis',
+        ],
+        backToHome: 'Kembali ke Beranda',
+        copyright: '\u00A9 2026 Desa Manud Jaya. Hak cipta dilindungi.',
+    },
+
+    // Petik Strawberry page
+    petikStrawberry: {
+        title: 'Petik Strawberry',
+        heroDesc:
+            'Rasakan pengalaman seru memetik strawberry segar langsung dari kebunnya di udara pegunungan yang sejuk.',
+        aboutTitle: 'Tentang Kegiatan Petik Strawberry',
+        aboutP1:
+            'Kegiatan Petik Strawberry merupakan aktivitas wisata interaktif yang memungkinkan pengunjung untuk langsung memetik buah strawberry segar dari kebun. Berlokasi di kebun strawberry Desa Manud Jaya yang berada di dataran tinggi, pengunjung akan menikmati udara sejuk sambil memilih dan memetik strawberry pilihan mereka sendiri.',
+        aboutP2:
+            'Aktivitas ini cocok untuk semua usia, dari anak-anak hingga orang dewasa. Setiap peserta akan diberikan keranjang dan panduan dari petani lokal tentang cara memilih dan memetik strawberry yang matang sempurna. Strawberry yang dipetik bisa langsung dinikmati atau dibawa pulang sebagai oleh-oleh.',
+        highlightsTitle: 'Aktivitas yang Bisa Dilakukan',
+        highlights: [
+            'Memetik strawberry segar langsung dari kebun',
+            'Belajar tentang budidaya strawberry dari petani lokal',
+            'Mencicipi strawberry segar di kebun',
+            'Berfoto di area kebun strawberry yang indah',
+            'Membeli olahan strawberry khas desa (selai, jus, keripik)',
+        ],
+        packagesTitle: 'Paket Petik Strawberry',
+        packages: [
+            'Paket Hemat — Petik 250 gram : Rp30.000',
+            'Paket Keluarga — Petik 500 gram : Rp50.000',
+            'Paket Premium — Petik 1 kg + jus strawberry : Rp90.000',
+            'Paket Edukasi (rombongan) — Petik + tur kebun : Rp40.000/orang',
+        ],
+        infoTitle: 'Informasi',
+        openHours: 'Jam Buka',
+        openHoursValue: '08:00 — 16:00 WIB (setiap hari)',
+        location: 'Lokasi',
+        locationValue: 'Kebun Strawberry Manud Jaya, 5 menit dari pusat desa',
+        groupSize: 'Kapasitas',
+        groupSizeValue: 'Maks. 30 orang per sesi',
+        ticketPrice: 'Harga',
+        ticketPrices: [
+            'Tiket masuk kebun : Rp15.000 / orang',
+            'Paket petik mulai dari : Rp30.000',
+            'Parkir motor : Rp5.000',
+            'Parkir mobil : Rp10.000',
+        ],
+        backToHome: 'Kembali ke Beranda',
+        copyright: '\u00A9 2026 Desa Manud Jaya. Hak cipta dilindungi.',
+    },
+
+    // Rafting Sungai Cimanud page
+    raftingCimanud: {
+        title: 'Rafting Sungai Cimanud',
+        heroDesc:
+            'Pacu adrenalin Anda dengan arung jeram di Sungai Cimanud yang mengalir di antara tebing dan hutan tropis.',
+        aboutTitle: 'Tentang Rafting Sungai Cimanud',
+        aboutP1:
+            'Rafting Sungai Cimanud menawarkan pengalaman arung jeram yang mendebarkan di sungai yang mengalir melalui lembah dan hutan tropis di sekitar Desa Manud Jaya. Sungai Cimanud memiliki kombinasi jeram yang menantang dan area tenang yang sempurna untuk menikmati pemandangan alam sekitar.',
+        aboutP2:
+            'Setiap rombongan akan didampingi oleh pemandu arung jeram bersertifikat yang berpengalaman. Peralatan keselamatan lengkap disediakan termasuk helm, pelampung, dan dayung. Rafting di Sungai Cimanud cocok untuk pemula maupun yang sudah berpengalaman.',
+        highlightsTitle: 'Highlight Aktivitas',
+        highlights: [
+            'Arung jeram di jeram Grade II-III yang menantang',
+            'Pemandangan tebing dan hutan tropis di sepanjang sungai',
+            'Spot untuk berenang di area sungai yang tenang',
+            'Berfoto di jeram dan pemandangan alam',
+            'Menikmati makan siang di tepi sungai setelah rafting',
+        ],
+        safetyTitle: 'Keselamatan & Peralatan',
+        safetyItems: [
+            'Helm dan pelampung standar internasional disediakan',
+            'Pemandu arung jeram bersertifikat di setiap perahu',
+            'Briefing keselamatan sebelum kegiatan',
+            'Perahu karet berkualitas dengan kapasitas 6-8 orang',
+            'Tim penyelamat siaga di sepanjang jalur rafting',
+            'P3K tersedia di titik start dan finish',
+        ],
+        bringTitle: 'Yang Perlu Dibawa',
+        bringItems: [
+            'Pakaian ganti & handuk',
+            'Sepatu yang bisa basah (sandal gunung)',
+            'Sunscreen tahan air',
+            'Kamera waterproof (opsional)',
+            'Obat pribadi jika diperlukan',
+            'Semangat dan keberanian!',
+        ],
+        infoTitle: 'Informasi',
+        riverGrade: 'Grade Jeram',
+        riverGradeValue: 'Grade II — III (menengah)',
+        distance: 'Jarak Tempuh',
+        distanceValue: '\u00B1 7 km',
+        duration: 'Durasi',
+        durationValue: '\u00B1 2 — 3 jam (termasuk briefing)',
+        groupSize: 'Ukuran Grup',
+        groupSizeValue: '4 — 8 orang per perahu',
+        ageReq: 'Syarat Usia',
+        ageReqValue: 'Minimal 12 tahun, bisa berenang',
+        ticketPrice: 'Harga Paket',
+        ticketPrices: [
+            'Paket Reguler : Rp150.000 / orang',
+            'Paket Premium (termasuk makan siang + dokumentasi) : Rp250.000 / orang',
+            'Sewa kamera waterproof : Rp50.000',
         ],
         backToHome: 'Kembali ke Beranda',
         copyright: '\u00A9 2026 Desa Manud Jaya. Hak cipta dilindungi.',

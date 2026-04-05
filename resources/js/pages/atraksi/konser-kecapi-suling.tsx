@@ -31,17 +31,22 @@ export default function KonserKecapiSuling() {
                 <WisataNavbar />
 
                 {/* Hero */}
-                <section className="relative bg-gradient-to-br from-amber-500/20 via-amber-500/10 to-background py-20">
-                    <div className="mx-auto max-w-4xl px-6 text-center">
-                        <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-amber-500/20">
-                            <Music className="h-8 w-8 text-amber-600" />
+                <section className="relative">
+                    <img
+                        src="/images/kecapi_suling.png"
+                        alt="Konser Kecapi Suling"
+                        className="block w-full"
+                    />
+                    <div className="absolute inset-0 bg-black/50" />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="mx-auto max-w-2xl px-6 text-center">
+                            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
+                                {data.title}
+                            </h1>
+                            <p className="mt-4 text-lg text-white/80">
+                                {data.heroDesc}
+                            </p>
                         </div>
-                        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-                            {data.title}
-                        </h1>
-                        <p className="mt-4 text-lg text-muted-foreground">
-                            {data.heroDesc}
-                        </p>
                     </div>
                 </section>
 

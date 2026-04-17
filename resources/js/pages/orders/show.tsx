@@ -1,11 +1,5 @@
 import { Head, Link } from '@inertiajs/react';
-import {
-    ArrowLeft,
-    CheckCircle,
-    Clock,
-    Download,
-    XCircle,
-} from 'lucide-react';
+import { ArrowLeft, CheckCircle, Clock, Download, XCircle } from 'lucide-react';
 
 import AppLayout from '@/layouts/app-layout';
 import type { BreadcrumbItem } from '@/types';

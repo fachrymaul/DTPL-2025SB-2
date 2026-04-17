@@ -92,10 +92,7 @@ export default function CartIndex({ items, total }: Props) {
                                     <p className="text-sm text-muted-foreground">
                                         {item.variant.name}
                                         {item.variant.unit && (
-                                            <>
-                                                {' '}
-                                                &middot; {item.variant.unit}
-                                            </>
+                                            <> &middot; {item.variant.unit}</>
                                         )}
                                     </p>
                                     <p className="text-sm text-muted-foreground">

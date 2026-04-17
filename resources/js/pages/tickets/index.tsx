@@ -55,9 +55,7 @@ export default function TicketsIndex({
     ];
 
     function getVariantId(ticket: TicketItem): number | null {
-        return (
-            selectedVariants[ticket.id] ?? ticket.variants[0]?.id ?? null
-        );
+        return selectedVariants[ticket.id] ?? ticket.variants[0]?.id ?? null;
     }
 
     function addToCart(ticket: TicketItem) {

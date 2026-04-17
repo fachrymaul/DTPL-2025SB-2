@@ -27,6 +27,9 @@ const en = {
         register: 'Register',
         greeting: 'Hello,',
         logout: 'Log out',
+        myOrders: 'My Orders',
+        staffDashboard: 'Staff Dashboard',
+        adminDashboard: 'Admin Dashboard',
     },
 
     // Navbar dropdown descriptions

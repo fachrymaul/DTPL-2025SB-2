@@ -10,10 +10,22 @@ import {
     Users,
 } from 'lucide-react';
 
+import BuyTicketCard from '@/components/buy-ticket-card';
 import WisataNavbar from '@/components/wisata-navbar';
 import { useLanguage } from '@/contexts/language-context';
 
-export default function PetikStrawberry() {
+type TicketData = {
+    id: number;
+    name: string;
+    price: number;
+    quota: number;
+};
+
+export default function PetikStrawberry({
+    ticket,
+}: {
+    ticket: TicketData | null;
+}) {
     const { t } = useLanguage();
     const data = t.petikStrawberry;
 
@@ -161,6 +173,11 @@ export default function PetikStrawberry() {
                                     </div>
                                 </dl>
                             </div>
+
+                            <BuyTicketCard
+                                ticket={ticket}
+                                accentColor="text-pink-500"
+                            />
                         </div>
                     </div>
                 </section>

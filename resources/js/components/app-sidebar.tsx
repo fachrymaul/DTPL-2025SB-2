@@ -1,5 +1,12 @@
-import { Link } from '@inertiajs/react';
-import { BookOpen, Folder, LayoutGrid } from 'lucide-react';
+import { Link, usePage } from '@inertiajs/react';
+import {
+    BookOpen,
+    CreditCard,
+    Folder,
+    Package,
+    ShoppingCart,
+    Users,
+} from 'lucide-react';
 import { NavFooter } from '@/components/nav-footer';
 import { NavMain } from '@/components/nav-main';
 import { NavUser } from '@/components/nav-user';
@@ -14,15 +21,8 @@ import {
 } from '@/components/ui/sidebar';
 import { dashboard } from '@/routes';
 import type { NavItem } from '@/types';
+import type { User } from '@/types/auth';
 import AppLogo from './app-logo';
-
-const mainNavItems: NavItem[] = [
-    {
-        title: 'Dashboard',
-        href: dashboard(),
-        icon: LayoutGrid,
-    },
-];
 
 const footerNavItems: NavItem[] = [
     {
@@ -38,6 +38,38 @@ const footerNavItems: NavItem[] = [
 ];
 
 export function AppSidebar() {
+    const { auth } = usePage().props;
+    const user = auth.user as User;
+
+    const mainNavItems: NavItem[] = [
+        {
+            title: 'Keranjang',
+            href: '/keranjang',
+            icon: ShoppingCart,
+        },
+        {
+            title: 'Pesanan Saya',
+            href: '/pesanan',
+            icon: Package,
+        },
+    ];
+
+    if (user?.role === 'admin' || user?.role === 'staff') {
+        mainNavItems.push({
+            title: 'Staff Dashboard',
+            href: '/staff/dashboard',
+            icon: CreditCard,
+        });
+    }
+
+    if (user?.role === 'admin') {
+        mainNavItems.push({
+            title: 'Kelola Pengguna',
+            href: '/admin/users',
+            icon: Users,
+        });
+    }
+
     return (
         <Sidebar collapsible="icon" variant="inset">
             <SidebarHeader>

@@ -9,10 +9,18 @@ import {
     TrendingUp,
 } from 'lucide-react';
 
+import BuyTicketCard from '@/components/buy-ticket-card';
 import WisataNavbar from '@/components/wisata-navbar';
 import { useLanguage } from '@/contexts/language-context';
 
-export default function PuncakManud() {
+type TicketData = {
+    id: number;
+    name: string;
+    price: number;
+    quota: number;
+};
+
+export default function PuncakManud({ ticket }: { ticket: TicketData | null }) {
     const { t } = useLanguage();
 
     return (
@@ -172,6 +180,11 @@ export default function PuncakManud() {
                                     </div>
                                 </dl>
                             </div>
+
+                            <BuyTicketCard
+                                ticket={ticket}
+                                accentColor="text-emerald-500"
+                            />
                         </div>
                     </div>
                 </section>

@@ -11,10 +11,22 @@ import {
     Waves,
 } from 'lucide-react';
 
+import BuyTicketCard from '@/components/buy-ticket-card';
 import WisataNavbar from '@/components/wisata-navbar';
 import { useLanguage } from '@/contexts/language-context';
 
-export default function RaftingCimanud() {
+type TicketData = {
+    id: number;
+    name: string;
+    price: number;
+    quota: number;
+};
+
+export default function RaftingCimanud({
+    ticket,
+}: {
+    ticket: TicketData | null;
+}) {
     const { t } = useLanguage();
     const data = t.raftingCimanud;
 
@@ -202,6 +214,11 @@ export default function RaftingCimanud() {
                                     </div>
                                 </dl>
                             </div>
+
+                            <BuyTicketCard
+                                ticket={ticket}
+                                accentColor="text-sky-500"
+                            />
                         </div>
                     </div>
                 </section>

@@ -4,10 +4,12 @@ import {
     ChevronDown,
     Drama,
     Droplets,
+    LayoutDashboard,
     LogOut,
     Menu,
     Mountain,
     Music,
+    Receipt,
     Waves,
     X,
 } from 'lucide-react';
@@ -88,6 +90,7 @@ export default function WisataNavbar({ navLinks }: WisataNavbarProps) {
     const defaultLinks: NavLink[] = [
         { href: '/akomodasi-transportasi', label: t.nav.akomodasiTransportasi },
         { href: '/pemandu-wisata', label: t.nav.pemanduWisata },
+        { href: '/faq', label: 'FAQ' },
         { href: '/kontak', label: t.nav.kontakKami },
     ];
 
@@ -242,6 +245,34 @@ export default function WisataNavbar({ navLinks }: WisataNavbarProps) {
                             </button>
                             {userOpen && (
                                 <div className="absolute top-full right-0 mt-2 w-48 rounded-xl border border-border bg-background p-2 shadow-lg">
+                                    {auth.user.role === 'admin' ? (
+                                        <Link
+                                            href="/dashboard"
+                                            className="flex w-full items-center gap-2 rounded-lg px-3 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+                                            onClick={() => setUserOpen(false)}
+                                        >
+                                            <LayoutDashboard className="h-4 w-4" />
+                                            {t.nav.adminDashboard}
+                                        </Link>
+                                    ) : auth.user.role === 'staff' ? (
+                                        <Link
+                                            href="/staff/dashboard"
+                                            className="flex w-full items-center gap-2 rounded-lg px-3 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+                                            onClick={() => setUserOpen(false)}
+                                        >
+                                            <LayoutDashboard className="h-4 w-4" />
+                                            {t.nav.staffDashboard}
+                                        </Link>
+                                    ) : (
+                                        <Link
+                                            href="/pesanan"
+                                            className="flex w-full items-center gap-2 rounded-lg px-3 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+                                            onClick={() => setUserOpen(false)}
+                                        >
+                                            <Receipt className="h-4 w-4" />
+                                            {t.nav.myOrders}
+                                        </Link>
+                                    )}
                                     <Link
                                         href={logout()}
                                         as="button"
@@ -389,6 +420,40 @@ export default function WisataNavbar({ navLinks }: WisataNavbarProps) {
                                     <span className="text-sm font-medium">
                                         {t.nav.greeting} {auth.user.name}
                                     </span>
+                                    {auth.user.role === 'admin' ? (
+                                        <Link
+                                            href="/dashboard"
+                                            className="flex items-center gap-2 text-sm font-medium text-foreground transition-colors hover:text-foreground/80"
+                                            onClick={() =>
+                                                setMobileMenuOpen(false)
+                                            }
+                                        >
+                                            <LayoutDashboard className="h-4 w-4" />
+                                            {t.nav.adminDashboard}
+                                        </Link>
+                                    ) : auth.user.role === 'staff' ? (
+                                        <Link
+                                            href="/staff/dashboard"
+                                            className="flex items-center gap-2 text-sm font-medium text-foreground transition-colors hover:text-foreground/80"
+                                            onClick={() =>
+                                                setMobileMenuOpen(false)
+                                            }
+                                        >
+                                            <LayoutDashboard className="h-4 w-4" />
+                                            {t.nav.staffDashboard}
+                                        </Link>
+                                    ) : (
+                                        <Link
+                                            href="/pesanan"
+                                            className="flex items-center gap-2 text-sm font-medium text-foreground transition-colors hover:text-foreground/80"
+                                            onClick={() =>
+                                                setMobileMenuOpen(false)
+                                            }
+                                        >
+                                            <Receipt className="h-4 w-4" />
+                                            {t.nav.myOrders}
+                                        </Link>
+                                    )}
                                     <Link
                                         href={logout()}
                                         as="button"

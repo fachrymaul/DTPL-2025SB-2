@@ -10,10 +10,22 @@ import {
     Users,
 } from 'lucide-react';
 
+import BuyTicketCard from '@/components/buy-ticket-card';
 import WisataNavbar from '@/components/wisata-navbar';
 import { useLanguage } from '@/contexts/language-context';
 
-export default function DramaSangkuriang() {
+type TicketData = {
+    id: number;
+    name: string;
+    price: number;
+    quota: number;
+};
+
+export default function DramaSangkuriang({
+    ticket,
+}: {
+    ticket: TicketData | null;
+}) {
     const { t } = useLanguage();
     const data = t.dramaSangkuriang;
 
@@ -174,6 +186,11 @@ export default function DramaSangkuriang() {
                                     </div>
                                 </dl>
                             </div>
+
+                            <BuyTicketCard
+                                ticket={ticket}
+                                accentColor="text-purple-500"
+                            />
                         </div>
                     </div>
                 </section>

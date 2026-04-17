@@ -8,10 +8,22 @@ import {
     Waves,
 } from 'lucide-react';
 
+import BuyTicketCard from '@/components/buy-ticket-card';
 import WisataNavbar from '@/components/wisata-navbar';
 import { useLanguage } from '@/contexts/language-context';
 
-export default function AirTerjunCahaya() {
+type TicketData = {
+    id: number;
+    name: string;
+    price: number;
+    quota: number;
+};
+
+export default function AirTerjunCahaya({
+    ticket,
+}: {
+    ticket: TicketData | null;
+}) {
     const { t } = useLanguage();
 
     return (
@@ -179,6 +191,11 @@ export default function AirTerjunCahaya() {
                                     </div>
                                 </dl>
                             </div>
+
+                            <BuyTicketCard
+                                ticket={ticket}
+                                accentColor="text-blue-500"
+                            />
                         </div>
                     </div>
                 </section>

@@ -10,10 +10,22 @@ import {
     Users,
 } from 'lucide-react';
 
+import BuyTicketCard from '@/components/buy-ticket-card';
 import WisataNavbar from '@/components/wisata-navbar';
 import { useLanguage } from '@/contexts/language-context';
 
-export default function KonserKecapiSuling() {
+type TicketData = {
+    id: number;
+    name: string;
+    price: number;
+    quota: number;
+};
+
+export default function KonserKecapiSuling({
+    ticket,
+}: {
+    ticket: TicketData | null;
+}) {
     const { t } = useLanguage();
     const data = t.konserKecapiSuling;
 
@@ -171,6 +183,11 @@ export default function KonserKecapiSuling() {
                                     </div>
                                 </dl>
                             </div>
+
+                            <BuyTicketCard
+                                ticket={ticket}
+                                accentColor="text-amber-500"
+                            />
                         </div>
                     </div>
                 </section>

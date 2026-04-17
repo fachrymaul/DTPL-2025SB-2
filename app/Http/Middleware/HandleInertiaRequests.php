@@ -35,15 +35,19 @@ class HandleInertiaRequests extends Middleware
      */
     public function share(Request $request): array
     {
+        $cart = $request->session()->get('cart', []);
+
         return [
             ...parent::share($request),
             'name' => config('app.name'),
             'auth' => [
                 'user' => $request->user(),
             ],
+            'cartCount' => collect($cart)->sum('quantity'),
             'sidebarOpen' => ! $request->hasCookie('sidebar_state') || $request->cookie('sidebar_state') === 'true',
             'flash' => [
                 'justLoggedIn' => $request->session()->pull('just_logged_in', false),
+                'success' => $request->session()->get('success'),
             ],
         ];
     }

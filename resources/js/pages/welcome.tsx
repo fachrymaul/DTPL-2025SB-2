@@ -212,6 +212,18 @@ export default function Welcome() {
                                     {t.welcome.footerAkomodasi}
                                 </Link>
                                 <Link
+                                    href="/tiket"
+                                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                                >
+                                    Beli Tiket
+                                </Link>
+                                <Link
+                                    href="/faq"
+                                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                                >
+                                    FAQ
+                                </Link>
+                                <Link
                                     href="/kontak"
                                     className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                                 >

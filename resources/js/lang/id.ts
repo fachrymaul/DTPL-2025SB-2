@@ -27,6 +27,9 @@ const id = {
         register: 'Daftar',
         greeting: 'Halo,',
         logout: 'Keluar',
+        myOrders: 'Pesanan Saya',
+        staffDashboard: 'Dashboard Staff',
+        adminDashboard: 'Dashboard Admin',
     },
 
     // Navbar dropdown descriptions

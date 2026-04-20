@@ -38,7 +38,7 @@ RUN composer install --ignore-platform-reqs \
 RUN mkdir -p database && touch database/database.sqlite \
     && cp .env.example .env \
     && php artisan key:generate \
-    && php artisan migrate --force \
+    && php artisan migrate --force --seed \
     && npm run build
 
 EXPOSE 80

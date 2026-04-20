@@ -6,9 +6,13 @@ services:
     ports:
       - "${APP_PORT:-80}:80"
     environment:
-      - APP_ENV=${APP_ENV:-local}
-      - APP_DEBUG=${APP_DEBUG:-true}
+      - APP_ENV=${APP_ENV:-production}
+      - APP_DEBUG=${APP_DEBUG:-false}
       - APP_URL=${APP_URL:-http://localhost}
+      - SESSION_DRIVER=${SESSION_DRIVER:-file}
+      - CACHE_STORE=${CACHE_STORE:-file}
+      - QUEUE_CONNECTION=${QUEUE_CONNECTION:-sync}
+      - SESSION_SECURE_COOKIE=${SESSION_SECURE_COOKIE:-false}
     volumes:
       - sqlite-data:/var/www/html/database
 

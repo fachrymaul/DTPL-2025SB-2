@@ -39,8 +39,12 @@ RUN mkdir -p database && touch database/database.sqlite \
     && cp .env.example .env \
     && php artisan key:generate \
     && php artisan migrate --force --seed \
-    && npm run build
+    && npm run build \
+    && php artisan view:cache
+
+RUN chmod +x /var/www/html/docker-entrypoint.sh
 
 EXPOSE 80
 
+ENTRYPOINT ["/var/www/html/docker-entrypoint.sh"]
 CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=80"]

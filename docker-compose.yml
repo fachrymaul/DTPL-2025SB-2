@@ -1,3 +1,20 @@
+x-app-env: &app-env
+  APP_ENV: ${APP_ENV:-production}
+  APP_DEBUG: ${APP_DEBUG:-false}
+  APP_URL: ${APP_URL:-http://localhost}
+  SESSION_DRIVER: ${SESSION_DRIVER:-file}
+  CACHE_STORE: ${CACHE_STORE:-file}
+  QUEUE_CONNECTION: ${QUEUE_CONNECTION:-database}
+  SESSION_SECURE_COOKIE: ${SESSION_SECURE_COOKIE:-false}
+  MAIL_MAILER: ${MAIL_MAILER:-smtp}
+  MAIL_HOST: ${MAIL_HOST:-smtp.gmail.com}
+  MAIL_PORT: ${MAIL_PORT:-587}
+  MAIL_USERNAME: ${MAIL_USERNAME}
+  MAIL_PASSWORD: ${MAIL_PASSWORD}
+  MAIL_SCHEME: ${MAIL_SCHEME:-tls}
+  MAIL_FROM_ADDRESS: ${MAIL_FROM_ADDRESS}
+  MAIL_FROM_NAME: ${MAIL_FROM_NAME:-Desa Manud Jaya}
+
 services:
   app:
     build:
@@ -5,16 +22,23 @@ services:
       dockerfile: Dockerfile
     ports:
       - "${APP_PORT:-80}:80"
-    environment:
-      - APP_ENV=${APP_ENV:-production}
-      - APP_DEBUG=${APP_DEBUG:-false}
-      - APP_URL=${APP_URL:-http://localhost}
-      - SESSION_DRIVER=${SESSION_DRIVER:-file}
-      - CACHE_STORE=${CACHE_STORE:-file}
-      - QUEUE_CONNECTION=${QUEUE_CONNECTION:-sync}
-      - SESSION_SECURE_COOKIE=${SESSION_SECURE_COOKIE:-false}
+    environment: *app-env
     volumes:
       - sqlite-data:/var/www/html/database
+      - storage-data:/var/www/html/storage/app
+
+  queue:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment: *app-env
+    command: ["php", "artisan", "queue:work", "--tries=3", "--timeout=600", "--sleep=3"]
+    volumes:
+      - sqlite-data:/var/www/html/database
+      - storage-data:/var/www/html/storage/app
+    depends_on:
+      - app
 
 volumes:
   sqlite-data:
+  storage-data:

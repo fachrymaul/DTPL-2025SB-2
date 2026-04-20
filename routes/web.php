@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\BroadcastController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
@@ -83,6 +84,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
 Route::middleware(['auth', 'verified', 'role:admin'])->prefix('admin')->group(function () {
     Route::get('/users', [UserController::class, 'index'])->name('admin.users');
     Route::patch('/users/{user}', [UserController::class, 'update'])->name('admin.users.update');
+
+    Route::get('/broadcast', [BroadcastController::class, 'index'])->name('admin.broadcast.index');
+    Route::post('/broadcast', [BroadcastController::class, 'send'])->name('admin.broadcast.send');
 });
 
 Route::middleware(['auth', 'verified', 'role:admin,staff'])->prefix('staff')->group(function () {

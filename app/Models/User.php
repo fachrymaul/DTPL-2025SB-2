@@ -44,6 +44,43 @@ class User extends Authenticatable
     }
 
     /**
+     * Return customer segment A..H from the Customer Segment matrix
+     * (gender × age bucket). Falls back to 'H' when data is missing.
+     *
+     * Columns: 17–28 (Z), 28–35 (Y), 35–50 (X), 50–63 (boomer).
+     * Rows: Laki-laki (A,C,E,G), Perempuan (B,D,F,H).
+     */
+    public function segment(): string
+    {
+        if (! $this->date_of_birth || ! $this->gender) {
+            return 'H';
+        }
+
+        $age = $this->date_of_birth->age;
+
+        $column = match (true) {
+            $age >= 17 && $age < 28 => 0,
+            $age >= 28 && $age < 35 => 1,
+            $age >= 35 && $age < 50 => 2,
+            $age >= 50 && $age < 63 => 3,
+            default => null,
+        };
+
+        if ($column === null) {
+            return 'H';
+        }
+
+        $row = $this->gender === 'male' ? 0 : 1;
+
+        $matrix = [
+            ['A', 'C', 'E', 'G'],
+            ['B', 'D', 'F', 'H'],
+        ];
+
+        return $matrix[$row][$column];
+    }
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var list<string>

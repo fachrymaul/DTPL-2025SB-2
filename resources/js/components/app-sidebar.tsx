@@ -3,6 +3,7 @@ import {
     BookOpen,
     CreditCard,
     Folder,
+    Mail,
     Package,
     ShoppingCart,
     Users,
@@ -67,6 +68,11 @@ export function AppSidebar() {
             title: 'Kelola Pengguna',
             href: '/admin/users',
             icon: Users,
+        });
+        mainNavItems.push({
+            title: 'Broadcast Email',
+            href: '/admin/broadcast',
+            icon: Mail,
         });
     }
 

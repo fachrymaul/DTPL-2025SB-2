@@ -2,8 +2,8 @@ import { Head, Link, router, usePage } from '@inertiajs/react';
 import { Mountain, ShoppingCart, Ticket } from 'lucide-react';
 import { useState } from 'react';
 
-import WisataNavbar from '@/components/wisata-navbar';
 import { Button } from '@/components/ui/button';
+import WisataNavbar from '@/components/wisata-navbar';
 
 type Variant = {
     id: number;

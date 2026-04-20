@@ -13,7 +13,7 @@ class UserController extends Controller
 {
     public function index(): Response
     {
-        $users = User::orderBy('name')->get(['id', 'name', 'email', 'role', 'created_at']);
+        $users = User::orderBy('name')->get(['id', 'name', 'email', 'role', 'email_verified_at', 'created_at']);
 
         return Inertia::render('admin/users', [
             'users' => $users,
@@ -33,5 +33,16 @@ class UserController extends Controller
         $user->update(['role' => $request->role]);
 
         return back()->with('success', "Role {$user->name} berhasil diubah menjadi {$request->role}.");
+    }
+
+    public function verify(User $user): RedirectResponse
+    {
+        if ($user->email_verified_at !== null) {
+            return back()->with('success', "Email {$user->name} sudah terverifikasi sebelumnya.");
+        }
+
+        $user->forceFill(['email_verified_at' => now()])->save();
+
+        return back()->with('success', "Email {$user->name} berhasil diverifikasi.");
     }
 }

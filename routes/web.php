@@ -84,6 +84,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 Route::middleware(['auth', 'verified', 'role:admin'])->prefix('admin')->group(function () {
     Route::get('/users', [UserController::class, 'index'])->name('admin.users');
     Route::patch('/users/{user}', [UserController::class, 'update'])->name('admin.users.update');
+    Route::post('/users/{user}/verify', [UserController::class, 'verify'])->name('admin.users.verify');
 
     Route::get('/broadcast', [BroadcastController::class, 'index'])->name('admin.broadcast.index');
     Route::post('/broadcast', [BroadcastController::class, 'send'])->name('admin.broadcast.send');

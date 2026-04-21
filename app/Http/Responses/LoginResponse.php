@@ -2,6 +2,7 @@
 
 namespace App\Http\Responses;
 
+use Inertia\Inertia;
 use Laravel\Fortify\Contracts\LoginResponse as LoginResponseContract;
 
 class LoginResponse implements LoginResponseContract
@@ -10,6 +11,6 @@ class LoginResponse implements LoginResponseContract
     {
         $request->session()->flash('just_logged_in', true);
 
-        return redirect()->intended(config('fortify.home'));
+        return Inertia::location(config('fortify.home'));
     }
 }
